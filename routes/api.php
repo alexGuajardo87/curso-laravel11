@@ -7,7 +7,7 @@ use App\Http\Controllers\CentrosComputoController;
 use App\Http\Controllers\ReportesController;
 
 
-Route::get('/holasss', function (Request $request) {
+Route::get('/hola', function (Request $request) {
     return "Hola";
 })->middleware('auth:sanctum');
 
