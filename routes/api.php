@@ -14,8 +14,6 @@ Route::get('/hola', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-/* quiero averiguar si puedo hacer push */
-
 Route::resource('centros-computo', CentrosComputoController::class);
 
 
