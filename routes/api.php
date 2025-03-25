@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CentrosComputoController;
 use App\Http\Controllers\ReportesController;
+use App\Http\Controllers\Procesos\ProcesosHorariosController;
+use App\Http\Controllers\Reportes\ReportesHorariosController;
 
 
 Route::get('/hola', function (Request $request) {
@@ -12,9 +14,14 @@ Route::get('/hola', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
+
+
 Route::resource('centros-computo', CentrosComputoController::class);
 
-Route::get('/obtener-centros-computo',[ReportesController::class,'getBuscaCentrosComputo'])->name('getBuscaCentrosComputo');
+
+
+Route::post('/asignar-horario',[ProcesosHorariosController::class,'insertarHorarioCentroComputo'])->name('insertarHorarioCentroComputo');
+Route::get('/obtener-horarios-asginados',[ReportesHorariosController::class,'obtenerHorariosAsignados'])->name('obtenerHorariosAsignados');
 
 Route::post('/login',[LoginController::class,'authenticate'])->name('Login');
 
