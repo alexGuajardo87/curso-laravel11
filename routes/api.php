@@ -10,7 +10,7 @@ use App\Http\Controllers\Reportes\ReportesHorariosController;
 
 
 Route::get('/hola', function (Request $request) {
-    return "Hola";
+    return "Hola y adios";
 })->middleware('auth:sanctum');
 
 
